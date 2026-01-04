@@ -1,0 +1,39 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "afc5527d90725d85a9f09e0111bb2bb5bc153f636439103a46ab33c53e935f50",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/quotes/show.html.erb",
+      "line": 16,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => current_company.quotes.find(params[:id]).line_item_dates.ordered, { :quote => current_company.quotes.find(params[:id]) })",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "QuotesController",
+          "method": "show",
+          "line": 10,
+          "file": "app/controllers/quotes_controller.rb",
+          "rendered": {
+            "name": "quotes/show",
+            "file": "app/views/quotes/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "quotes/show"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.1.2"
+}
